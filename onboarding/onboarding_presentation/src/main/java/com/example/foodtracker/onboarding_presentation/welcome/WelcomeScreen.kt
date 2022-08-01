@@ -8,14 +8,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import com.example.core.R.string
 import com.example.core_ui.LocalSpacing
+import com.example.foodtracker.core.navigation.Route
+import com.example.foodtracker.core.util.UiEvent
 import com.example.foodtracker.onboarding_presentation.components.ActionButton
 
-@Preview
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(
+    onNavigate: (UiEvent.Navigate) -> Unit
+) {
     val spacing = LocalSpacing.current
     Column(
         modifier = Modifier
@@ -32,7 +34,7 @@ fun WelcomeScreen() {
         Spacer(modifier = Modifier.height(spacing.spaceMedium))
         ActionButton(
             text = stringResource(id = string.next),
-            onCLick = { /*TODO*/ },
+            onCLick = { onNavigate(UiEvent.Navigate(Route.AGE)) },
             modifier = Modifier.align(Alignment.CenterHorizontally)
         )
     }
