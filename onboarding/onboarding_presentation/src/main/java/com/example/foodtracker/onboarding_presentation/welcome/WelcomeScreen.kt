@@ -8,7 +8,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import com.example.core.R.string
+import com.example.core.R
 import com.example.core_ui.LocalSpacing
 import com.example.foodtracker.core.navigation.Route
 import com.example.foodtracker.core.util.UiEvent
@@ -27,14 +27,16 @@ fun WelcomeScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = stringResource(id = string.welcome_text),
+            text = stringResource(id = R.string.welcome_text),
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.h1
         )
         Spacer(modifier = Modifier.height(spacing.spaceMedium))
         ActionButton(
-            text = stringResource(id = string.next),
-            onCLick = { onNavigate(UiEvent.Navigate(Route.AGE)) },
+            text = stringResource(id = R.string.next),
+            onClick = {
+                onNavigate(UiEvent.Navigate(Route.GENDER))
+            },
             modifier = Modifier.align(Alignment.CenterHorizontally)
         )
     }

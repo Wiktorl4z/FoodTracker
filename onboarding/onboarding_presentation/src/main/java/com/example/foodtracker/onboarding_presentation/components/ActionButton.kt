@@ -14,13 +14,13 @@ import com.example.core_ui.LocalSpacing
 @Composable
 fun ActionButton(
     text: String,
-    onCLick: () -> Unit,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    isEnabled: Boolean = false,
+    isEnabled: Boolean = true,
     textStyle: TextStyle = MaterialTheme.typography.button
 ) {
     Button(
-        onClick = onCLick,
+        onClick = onClick,
         modifier = modifier,
         enabled = isEnabled,
         shape = RoundedCornerShape(100.dp)
