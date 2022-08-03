@@ -17,6 +17,7 @@ import com.example.foodtracker.onboarding_presentation.age.AgeScreen
 import com.example.foodtracker.onboarding_presentation.gender.GenderScreen
 import com.example.foodtracker.onboarding_presentation.goal.GoalScreen
 import com.example.foodtracker.onboarding_presentation.height.HeightScreen
+import com.example.foodtracker.onboarding_presentation.nutrientGoal.NutrientGoalScreen
 import com.example.foodtracker.onboarding_presentation.weight.WeightScreen
 import com.example.foodtracker.onboarding_presentation.welcome.WelcomeScreen
 import com.example.foodtracker.ui.theme.CaloryTrackerTheme
@@ -63,7 +64,10 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable(Route.NUTRIENT_GOAL) {
-
+                            NutrientGoalScreen(
+                                scaffoldState = scaffoldState,
+                                onNavigate = navController::navigate
+                            )
                         }
                         composable(Route.ACTIVITY) {
                             ActivityScreen(onNavigate = navController::navigate)
